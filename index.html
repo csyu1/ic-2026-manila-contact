@@ -1,113 +1,217 @@
-
 <!DOCTYPE html>
 <html lang="en">
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
-  <title>Our Contact Details</title>
+  <meta name="theme-color" content="#2e517b">
+  <meta name="description" content="A heartfelt thank-you to our dear delegates joining the Eternal Happiness International Convention in Manila. With love, from our family to yours.">
+  <title>Salamat, Dear Friends · Manila 2026</title>
+  <link rel="icon" href="media/event-logo-small.svg" type="image/svg+xml">
   <style>
-    * { box-sizing: border-box; }
-
-    body {
-      margin: 0;
-      min-height: 100vh;
-      padding: 48px 20px;
-      font-family: system-ui, sans-serif;
-      background: #f3f4f6;
-      color: #111827;
-      text-align: center;
+    :root {
+      /* Original convention logo colors, with a warm paper background. */
+      --blue: #2e517b;
+      --orange: #f3a628;
+      --yellow: #f8d729;
+      --ink: #233e5e;
+      --muted: #637183;
+      --gold-ink: #945b1b;
+      --paper: #fbf8f0;
+      --line: #dedfd8;
+      --serif: Georgia, "Times New Roman", serif;
+      --sans: "Avenir Next", Avenir, "Segoe UI", sans-serif;
     }
+    *, *::before, *::after { box-sizing: border-box; }
+    html { scroll-behavior: smooth; scroll-padding-top: 28px; }
+    body { margin: 0; background: var(--paper); color: var(--ink); font-family: var(--sans); -webkit-font-smoothing: antialiased; }
+    a { color: inherit; -webkit-tap-highlight-color: transparent; }
+    img { display: block; max-width: 100%; }
+    h1, h2, h3, p, figure { margin: 0; }
+    a:focus-visible { outline: 3px solid var(--gold-ink); outline-offset: 5px; }
+    ::selection { background: var(--yellow); color: var(--ink); }
+    .wrap { width: min(1080px, calc(100% - 80px)); margin-inline: auto; }
+    .icon { width: 20px; height: 20px; fill: none; stroke: currentColor; stroke-width: 1.6; stroke-linecap: round; stroke-linejoin: round; flex: 0 0 auto; }
+    .eyebrow { font-size: 10px; line-height: 1.6; font-weight: 600; letter-spacing: 2px; text-transform: uppercase; }
+    .skip-link { position: absolute; top: -70px; left: 20px; z-index: 10; padding: 12px 20px; border-radius: 4px; background: var(--blue); color: white; }
+    .skip-link:focus { top: 12px; }
 
-    h1 { margin-bottom: 8px; }
-    .subtitle { color: #6b7280; }
+    .site-header { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 104px; border-bottom: 1px solid var(--line); }
+    .brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
+    .brand img { width: 60px; height: 50px; }
+    .brand-title { display: block; font-size: 12px; font-weight: 600; line-height: 1.5; }
+    .brand-place { display: block; margin-top: 4px; color: var(--muted); font-size: 9px; letter-spacing: 1.8px; text-transform: uppercase; }
+    .header-link { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; font-size: 12px; font-weight: 600; text-decoration: none; }
+    .header-link:hover { color: var(--gold-ink); }
+    .header-link .icon { width: 15px; height: 15px; }
 
-    .container {
-      max-width: 800px;
-      margin: 40px auto;
-      display: grid;
-      grid-template-columns: repeat(2, 1fr);
-      gap: 20px;
+    .postcard { display: grid; grid-template-columns: minmax(0, 1.08fr) minmax(0, 1fr); grid-template-areas: "welcome portrait" "letter portrait"; column-gap: 90px; row-gap: 25px; padding-block: 64px 68px; }
+    .welcome { grid-area: welcome; }
+    .welcome .eyebrow { display: flex; align-items: center; gap: 12px; margin-bottom: 22px; color: var(--gold-ink); }
+    .welcome .eyebrow::before { content: ""; width: 25px; height: 2px; background: var(--orange); }
+    h1 { color: var(--blue); font-family: var(--serif); font-size: clamp(62px, 6.5vw, 82px); font-weight: 400; letter-spacing: -3.8px; line-height: 1.04; }
+    h1 span { display: block; }
+    h1 .salamat { font-style: italic; }
+    .translation { margin-top: 17px; color: var(--muted); font-family: var(--serif); font-size: 15px; font-style: italic; }
+    .welcome-copy { margin-top: 25px; max-width: 450px; font-size: 16px; line-height: 1.85; }
+    .welcome-copy strong { font-weight: 600; }
+
+    .portrait { grid-area: portrait; position: relative; align-self: center; width: 100%; max-width: 430px; margin-inline: auto; padding: 11px 11px 0; background: #fff; transform: rotate(2deg); box-shadow: 0 14px 36px #233e5e0d, 0 2px 6px #233e5e08; }
+    .portrait::before { content: ""; position: absolute; z-index: 1; top: -9px; left: calc(50% - 37px); width: 74px; height: 23px; background: #f8d72980; transform: rotate(-6deg); }
+    .portrait img { width: 100%; height: auto; aspect-ratio: 1115 / 1411; object-fit: cover; }
+    .portrait figcaption { padding: 18px 8px 20px; text-align: center; color: var(--blue); font-family: var(--serif); font-size: 18px; font-style: italic; }
+    .portrait figcaption span { color: var(--gold-ink); padding-inline: 6px; font-style: normal; }
+
+    .letter { grid-area: letter; max-width: 450px; }
+    .letter-copy { color: #485c71; font-size: 15px; line-height: 1.85; }
+    .letter-copy + .letter-copy { margin-top: 14px; }
+    .signature { margin-top: 24px; }
+    .signature-intro { display: block; color: var(--muted); font-family: var(--serif); font-size: 16px; font-style: italic; }
+    .signature-names { display: inline-flex; align-items: center; gap: 14px; margin-top: 7px; font-family: var(--serif); font-size: 29px; font-style: italic; letter-spacing: -.5px; }
+    .signature-names .icon { width: 19px; height: 19px; color: var(--gold-ink); stroke-width: 1.4; }
+
+    .contact { position: relative; display: grid; grid-template-columns: minmax(0, .85fr) minmax(0, 1.4fr); align-items: center; gap: 72px; border-top: 1px solid var(--line); padding-block: 46px 52px; }
+    .contact::before { content: ""; position: absolute; width: 56px; height: 2px; top: -1px; left: 0; background: var(--orange); }
+    .contact h2 { font-family: var(--serif); font-size: 36px; font-weight: 400; line-height: 1.2; letter-spacing: -1px; }
+    .contact-intro p { max-width: 300px; margin-top: 13px; color: var(--muted); font-size: 14px; line-height: 1.8; }
+    .contact-person { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-block: 19px; }
+    .contact-person + .contact-person { border-top: 1px solid var(--line); }
+    .contact-person h3 { font-size: 15px; font-weight: 600; }
+    .contact-actions { display: flex; gap: 9px; flex: 0 0 auto; }
+    .contact-action { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 11px 15px; border: 1px solid var(--blue); border-radius: 4px; background: var(--blue); color: #fff; font-size: 12px; font-weight: 600; text-decoration: none; transition: background 150ms ease, border-color 150ms ease; }
+    .contact-action:hover { background: var(--ink); border-color: var(--ink); }
+    .contact-action.secondary { border-color: #b6c2cd; background: transparent; color: var(--blue); }
+    .contact-action.secondary:hover { background: #edf1f3; border-color: var(--blue); }
+    .contact-action .icon { width: 16px; height: 16px; }
+
+    .site-footer { display: flex; align-items: center; justify-content: space-between; gap: 24px; border-top: 1px solid var(--line); padding-block: 22px 28px; color: var(--muted); }
+    .footer-event { font-size: 10px; line-height: 1.8; letter-spacing: .3px; }
+    .back-to-top { display: inline-flex; align-items: center; gap: 8px; min-height: 44px; font-size: 11px; text-decoration: none; white-space: nowrap; }
+    .back-to-top:hover { color: var(--blue); }
+    .back-to-top .icon { width: 14px; height: 14px; transform: rotate(-90deg); }
+
+    @media (max-width: 1100px) {
+      .postcard { column-gap: 56px; }
+      h1 { font-size: 70px; }
+      .contact { grid-template-columns: minmax(0, .7fr) minmax(0, 1.3fr); gap: 40px; }
+      .contact-person { gap: 12px; }
+      .contact-action { padding-inline: 12px; }
     }
-
-    .card {
-      background: white;
-      padding: 32px 24px;
-      border-radius: 18px;
-      box-shadow: 0 4px 20px #0000000d;
+    @media (max-width: 900px) {
+      .wrap { width: calc(100% - 56px); }
+      .postcard { column-gap: 38px; padding-block: 48px 54px; }
+      h1 { font-size: 62px; letter-spacing: -3px; }
+      .welcome-copy { font-size: 15px; }
+      .letter-copy { font-size: 14px; }
+      .contact { grid-template-columns: minmax(0, .65fr) minmax(0, 1fr); gap: 36px; }
+      .contact h2 { font-size: 32px; }
+      .contact-person { align-items: flex-start; flex-direction: column; gap: 14px; }
     }
-
-    .avatar {
-      width: 72px;
-      height: 72px;
-      border-radius: 50%;
-      background: #e5e7eb;
-      display: grid;
-      place-items: center;
-      margin: 0 auto 20px;
-      font-size: 30px;
+    @media (max-width: 700px) {
+      .wrap { width: calc(100% - 48px); }
+      .site-header { min-height: 90px; gap: 16px; }
+      .brand { gap: 10px; }
+      .brand img { width: 48px; height: 40px; }
+      .brand-title { max-width: 180px; font-size: 11px; }
+      .brand-place { font-size: 8px; letter-spacing: 1.2px; }
+      .header-link { font-size: 11px; white-space: nowrap; }
+      .header-link .icon { display: none; }
+      .postcard { grid-template-columns: 1fr; grid-template-areas: "welcome" "portrait" "letter"; gap: 32px; padding-block: 36px 38px; }
+      .welcome, .letter { width: 100%; max-width: 460px; margin-inline: auto; }
+      .welcome .eyebrow { margin-bottom: 16px; font-size: 9px; letter-spacing: 1.7px; }
+      h1 { font-size: clamp(55px, 10.5vw, 68px); }
+      .translation { margin-top: 14px; font-size: 14px; }
+      .welcome-copy { margin-top: 20px; line-height: 1.75; }
+      .portrait { width: calc(100% - 24px); max-width: 350px; padding: 9px 9px 0; transform: rotate(1.5deg); }
+      .portrait figcaption { font-size: 16px; padding-block: 14px 16px; }
+      .letter-copy { font-size: 15px; line-height: 1.8; }
+      .signature { margin-top: 22px; }
+      .signature-names { font-size: 28px; }
+      .contact { grid-template-columns: 1fr; gap: 14px; padding-block: 30px 28px; }
+      .contact-intro, .contact-list { width: 100%; max-width: 460px; margin-inline: auto; }
+      .contact h2 { font-size: 34px; }
+      .contact-intro p { max-width: 350px; margin-top: 10px; }
+      .contact-person { padding-block: 19px; gap: 13px; }
+      .contact-person h3 { font-size: 16px; }
+      .contact-actions { width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
+      .contact-action { min-height: 46px; }
+      .site-footer { align-items: flex-start; gap: 20px; padding-block: 20px; }
+      .footer-event { max-width: 240px; font-size: 9px; }
+      .back-to-top { min-height: 32px; font-size: 10px; }
     }
-
-    .button {
-      display: block;
-      padding: 13px;
-      margin-top: 12px;
-      border-radius: 9px;
-      background: #111827;
-      color: white;
-      text-decoration: none;
+    @media (max-width: 380px) {
+      .wrap { width: calc(100% - 36px); }
+      .brand-title { max-width: 140px; font-size: 10px; }
+      .brand img { width: 42px; height: 35px; }
+      .header-link { font-size: 10px; }
+      h1 { font-size: 52px; letter-spacing: -2.7px; }
     }
-
-    .button.secondary {
-      background: #f3f4f6;
-      color: #111827;
-    }
-
-    @media (max-width: 600px) {
-      .container {
-        grid-template-columns: 1fr;
-      }
+    @media (prefers-reduced-motion: reduce) {
+      html { scroll-behavior: auto; }
+      *, *::before, *::after { transition: none !important; }
     }
   </style>
 </head>
-<body>
-
-  <h1>Our Contact Details</h1>
-  <p class="subtitle">Feel free to get in touch.</p>
-
-  <main class="container">
-
-    <section class="card">
-      <div class="avatar">👤</div>
-      <h2>Your Name</h2>
-      <p>Contact Information</p>
-
-      <a class="button" href="tel:+15550100001">
-        Call Me
-      </a>
-      <a class="button secondary"
-         href="mailto:you@example.com">
-        Send Email
-      </a>
+<body id="top">
+  <a class="skip-link" href="#main">Skip to content</a>
+  <svg xmlns="http://www.w3.org/2000/svg" width="0" height="0" style="position:absolute" aria-hidden="true">
+    <defs>
+      <symbol id="icon-arrow" viewBox="0 0 24 24"><path d="M4 12h15m-6-6 6 6-6 6"/></symbol>
+      <symbol id="icon-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
+      <symbol id="icon-whatsapp" viewBox="0 0 24 24"><path d="M21 11.5a9 9 0 0 1-13.4 7.9L3 21l1.6-4.6A9 9 0 1 1 21 11.5Z"/><path d="m8 7 2 3-1.5 1.5a9 9 0 0 0 4 4L14 14l3 2c-1 3-4 2-7-1s-4-6-2-8Z"/></symbol>
+      <symbol id="icon-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></symbol>
+    </defs>
+  </svg>
+  <header class="site-header wrap">
+    <a class="brand" href="#top" aria-label="Manila 2026 — back to top">
+      <img src="media/event-logo-small.svg" width="65" height="54" alt="Manila convention logo">
+      <span><span class="brand-title">Eternal Happiness International Convention</span><span class="brand-place">Manila, Philippines</span></span>
+    </a>
+    <a class="header-link" href="#keep-in-touch">Keep in touch <svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></a>
+  </header>
+  <main id="main">
+    <article class="postcard wrap" aria-labelledby="thank-you-heading">
+      <div class="welcome">
+        <p class="eyebrow">A little note from Manila</p>
+        <h1 id="thank-you-heading"><span class="salamat" lang="fil">Salamat,</span><span>dear friends.</span></h1>
+        <p class="translation">Filipino for “thank you.”</p>
+        <p class="welcome-copy">Thank you for joining us for the <strong>Eternal Happiness International Convention in Manila.</strong> It is a joy to meet friends who already feel like family.</p>
+      </div>
+      <figure class="portrait">
+        <img src="media/Golden-Hour%20Family%20Portrait%20with%20Corgi.png" alt="An illustrated portrait of Carl and Rosemy with their corgi in the warm Philippine sunshine" width="1115" height="1411" fetchpriority="high">
+        <figcaption>Manila, Philippines <span aria-hidden="true">·</span> 2026</figcaption>
+      </figure>
+      <div class="letter" id="our-message">
+        <p class="letter-copy">We are grateful for your love, your encouragement, and the effort you have made to be here. May our shared love for Jehovah and the memories we make keep us close, wherever we call home.</p>
+        <p class="letter-copy">You will always have friends here in Manila.</p>
+        <p class="signature"><span class="signature-intro">With love,</span><span class="signature-names">Carl &amp; Rosemy <svg class="icon" aria-hidden="true"><use href="#icon-heart"/></svg></span></p>
+      </div>
+    </article>
+    <section class="contact wrap" id="keep-in-touch" aria-labelledby="contact-heading">
+      <div class="contact-intro">
+        <h2 id="contact-heading">Let’s keep in touch.</h2>
+        <p>A hello, a photo, a memory from Manila—we would love to hear from you.</p>
+      </div>
+      <div class="contact-list">
+        <section class="contact-person" aria-labelledby="first-contact">
+          <h3 id="first-contact">Carl Earvin Yu</h3>
+          <div class="contact-actions">
+            <a class="contact-action" href="https://wa.me/639217781866" target="_blank" rel="noopener noreferrer" aria-label="Message Carl Earvin Yu on WhatsApp (opens in a new tab)"><svg class="icon" aria-hidden="true"><use href="#icon-whatsapp"/></svg> WhatsApp</a>
+            <a class="contact-action secondary" href="mailto:carl.earvin.yu@gmail.com" aria-label="Send email to Carl Earvin Yu"><svg class="icon" aria-hidden="true"><use href="#icon-mail"/></svg> Send email</a>
+          </div>
+        </section>
+        <section class="contact-person" aria-labelledby="second-contact">
+          <h3 id="second-contact">Rosemy Yu</h3>
+          <div class="contact-actions">
+            <a class="contact-action" href="https://wa.me/639193517941" target="_blank" rel="noopener noreferrer" aria-label="Message Rosemy Yu on WhatsApp (opens in a new tab)"><svg class="icon" aria-hidden="true"><use href="#icon-whatsapp"/></svg> WhatsApp</a>
+            <a class="contact-action secondary" href="mailto:rosemybyu@gmail.com" aria-label="Send email to Rosemy Yu"><svg class="icon" aria-hidden="true"><use href="#icon-mail"/></svg> Send email</a>
+          </div>
+        </section>
+      </div>
     </section>
-
-    <section class="card">
-      <div class="avatar">👤</div>
-      <h2>Wife's Name</h2>
-      <p>Contact Information</p>
-
-      <a class="button" href="tel:+15550100002">
-        Call Me
-      </a>
-      <a class="button secondary"
-         href="mailto:wife@example.com">
-        Send Email
-      </a>
-    </section>
-
   </main>
-
-  <p class="subtitle">© Our Family</p>
-
+  <footer class="site-footer wrap">
+    <p class="footer-event">Jehovah’s Witnesses · Eternal Happiness International Convention · Manila</p>
+    <a class="back-to-top" href="#top">Back to top <svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></a>
+  </footer>
 </body>
 </html>
-<!-- Trigger GitHub Pages redeployment -->

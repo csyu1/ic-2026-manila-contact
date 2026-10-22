@@ -1,0 +1,25 @@
+/* Locally hosted Latin subsets from Google Fonts.
+   License notices: Lora-OFL.txt and Source-Sans-3-OFL.txt. */
+@font-face {
+  font-family: "Lora";
+  font-style: normal;
+  font-weight: 400;
+  font-display: swap;
+  src: url("lora-latin-regular.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Lora";
+  font-style: italic;
+  font-weight: 400;
+  font-display: swap;
+  src: url("lora-latin-italic.woff2") format("woff2");
+}
+
+@font-face {
+  font-family: "Source Sans 3";
+  font-style: normal;
+  font-weight: 400 600;
+  font-display: swap;
+  src: url("source-sans-3-latin.woff2") format("woff2");
+}

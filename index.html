@@ -7,6 +7,23 @@
   <meta name="description" content="A heartfelt thank-you to our dear delegates joining the Eternal Happiness International Convention in Manila. With love, from our family to yours.">
   <title>Salamat, Dear Friends · Manila 2026</title>
   <link rel="icon" href="media/event-logo-small.svg" type="image/svg+xml">
+  <link rel="canonical" href="https://csyu1.github.io/ic-2026-manila-contact/">
+  <meta property="og:type" content="website">
+  <meta property="og:locale" content="en_US">
+  <meta property="og:site_name" content="Carl &amp; Rosemy · Manila 2026">
+  <meta property="og:title" content="Salamat, Dear Friends · Manila 2026">
+  <meta property="og:description" content="A little thank-you from Carl &amp; Rosemy to our friends at the Eternal Happiness International Convention in Manila.">
+  <meta property="og:url" content="https://csyu1.github.io/ic-2026-manila-contact/">
+  <meta property="og:image" content="https://csyu1.github.io/ic-2026-manila-contact/media/manila-share.jpg">
+  <meta property="og:image:type" content="image/jpeg">
+  <meta property="og:image:width" content="1200">
+  <meta property="og:image:height" content="630">
+  <meta property="og:image:alt" content="Salamat, dear friends. With love, Carl and Rosemy, pictured with their corgi in Manila.">
+  <meta name="twitter:card" content="summary_large_image">
+  <meta name="twitter:title" content="Salamat, Dear Friends · Manila 2026">
+  <meta name="twitter:description" content="A little thank-you from Carl &amp; Rosemy to our friends at the Eternal Happiness International Convention in Manila.">
+  <meta name="twitter:image" content="https://csyu1.github.io/ic-2026-manila-contact/media/manila-share.jpg">
+  <meta name="twitter:image:alt" content="Salamat, dear friends. With love, Carl and Rosemy, pictured with their corgi in Manila.">
   <style>
     :root {
       /* Original convention logo colors, with a warm paper background. */
@@ -38,9 +55,10 @@
     .site-header { display: flex; align-items: center; justify-content: space-between; gap: 24px; min-height: 104px; border-bottom: 1px solid var(--line); }
     .brand { display: flex; align-items: center; gap: 14px; text-decoration: none; }
     .brand img { width: 60px; height: 50px; }
-    .brand-title { display: block; font-size: 12px; font-weight: 600; line-height: 1.5; }
-    .brand-place { display: block; margin-top: 4px; color: var(--muted); font-size: 9px; letter-spacing: 1.8px; text-transform: uppercase; }
-    .header-link { display: inline-flex; align-items: center; gap: 10px; min-height: 44px; font-size: 12px; font-weight: 600; text-decoration: none; }
+    .brand-title { display: block; font-family: var(--serif); font-size: 20px; line-height: 1.3; letter-spacing: -.3px; }
+    .brand-place { display: block; margin-top: 5px; color: var(--muted); font-size: 10px; line-height: 1.5; letter-spacing: .25px; }
+    .brand-location::before { content: " · "; white-space: pre; }
+    .header-link { display: none; align-items: center; gap: 10px; min-height: 44px; font-size: 12px; font-weight: 600; text-decoration: none; }
     .header-link:hover { color: var(--gold-ink); }
     .header-link .icon { width: 15px; height: 15px; }
 
@@ -76,6 +94,9 @@
     .contact-person { display: flex; align-items: center; justify-content: space-between; gap: 20px; padding-block: 19px; }
     .contact-person + .contact-person { border-top: 1px solid var(--line); }
     .contact-person h3 { font-size: 15px; font-weight: 600; }
+    .save-contact { display: inline-flex; align-items: center; gap: 5px; min-height: 32px; color: var(--muted); font-size: 11px; text-decoration: underline; text-decoration-color: #b6c2cd; text-underline-offset: 3px; }
+    .save-contact:hover { color: var(--blue); text-decoration-color: var(--blue); }
+    .save-contact .icon { width: 13px; height: 13px; }
     .contact-actions { display: flex; gap: 9px; flex: 0 0 auto; }
     .contact-action { display: inline-flex; align-items: center; justify-content: center; gap: 8px; min-height: 44px; padding: 11px 15px; border: 1px solid var(--blue); border-radius: 4px; background: var(--blue); color: #fff; font-size: 12px; font-weight: 600; text-decoration: none; transition: background 150ms ease, border-color 150ms ease; }
     .contact-action:hover { background: var(--ink); border-color: var(--ink); }
@@ -111,9 +132,11 @@
       .site-header { min-height: 90px; gap: 16px; }
       .brand { gap: 10px; }
       .brand img { width: 48px; height: 40px; }
-      .brand-title { max-width: 180px; font-size: 11px; }
-      .brand-place { font-size: 8px; letter-spacing: 1.2px; }
-      .header-link { font-size: 11px; white-space: nowrap; }
+      .brand-title { font-size: 17px; }
+      .brand-place { margin-top: 3px; font-size: 9px; letter-spacing: .1px; }
+      .brand-location { display: block; }
+      .brand-location::before { content: none; }
+      .header-link { display: inline-flex; font-size: 11px; white-space: nowrap; }
       .header-link .icon { display: none; }
       .postcard { grid-template-columns: 1fr; grid-template-areas: "welcome" "portrait" "letter"; gap: 32px; padding-block: 36px 38px; }
       .welcome, .letter { width: 100%; max-width: 460px; margin-inline: auto; }
@@ -130,8 +153,9 @@
       .contact-intro, .contact-list { width: 100%; max-width: 460px; margin-inline: auto; }
       .contact h2 { font-size: 34px; }
       .contact-intro p { max-width: 350px; margin-top: 10px; }
-      .contact-person { padding-block: 19px; gap: 13px; }
+      .contact-person { padding-block: 19px; gap: 5px; }
       .contact-person h3 { font-size: 16px; }
+      .save-contact { min-height: 44px; }
       .contact-actions { width: 100%; display: grid; grid-template-columns: 1fr 1fr; gap: 10px; }
       .contact-action { min-height: 46px; }
       .site-footer { align-items: flex-start; gap: 20px; padding-block: 20px; }
@@ -140,7 +164,7 @@
     }
     @media (max-width: 380px) {
       .wrap { width: calc(100% - 36px); }
-      .brand-title { max-width: 140px; font-size: 10px; }
+      .brand-title { font-size: 15px; }
       .brand img { width: 42px; height: 35px; }
       .header-link { font-size: 10px; }
       h1 { font-size: 52px; letter-spacing: -2.7px; }
@@ -159,12 +183,13 @@
       <symbol id="icon-heart" viewBox="0 0 24 24"><path d="M20.8 4.6a5.5 5.5 0 0 0-7.8 0L12 5.7l-1.1-1.1a5.5 5.5 0 0 0-7.8 7.8L12 21l8.8-8.6a5.5 5.5 0 0 0 0-7.8Z"/></symbol>
       <symbol id="icon-whatsapp" viewBox="0 0 24 24"><path d="M21 11.5a9 9 0 0 1-13.4 7.9L3 21l1.6-4.6A9 9 0 1 1 21 11.5Z"/><path d="m8 7 2 3-1.5 1.5a9 9 0 0 0 4 4L14 14l3 2c-1 3-4 2-7-1s-4-6-2-8Z"/></symbol>
       <symbol id="icon-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="m3 6 9 7 9-7"/></symbol>
+      <symbol id="icon-save" viewBox="0 0 24 24"><path d="M12 3v12m-4-4 4 4 4-4M4 16v5h16v-5"/></symbol>
     </defs>
   </svg>
   <header class="site-header wrap">
     <a class="brand" href="#top" aria-label="Manila 2026 — back to top">
       <img src="media/event-logo-small.svg" width="65" height="54" alt="Manila convention logo">
-      <span><span class="brand-title">Eternal Happiness International Convention</span><span class="brand-place">Manila, Philippines</span></span>
+      <span><span class="brand-title">Eternal Happiness</span><span class="brand-place">International Convention<span class="brand-location">Manila 2026</span></span></span>
     </a>
     <a class="header-link" href="#keep-in-touch">Keep in touch <svg class="icon" aria-hidden="true"><use href="#icon-arrow"/></svg></a>
   </header>
@@ -177,7 +202,10 @@
         <p class="welcome-copy">Thank you for joining us for the <strong>Eternal Happiness International Convention in Manila.</strong> It is a joy to meet friends who already feel like family.</p>
       </div>
       <figure class="portrait">
-        <img src="media/Golden-Hour%20Family%20Portrait%20with%20Corgi.png" alt="An illustrated portrait of Carl and Rosemy with their corgi in the warm Philippine sunshine" width="1115" height="1411" fetchpriority="high">
+        <picture>
+          <source type="image/webp" srcset="media/family-portrait-640.webp 640w, media/family-portrait.webp 1115w" sizes="(max-width: 380px) calc(100vw - 78px), (max-width: 421px) calc(100vw - 90px), (max-width: 700px) 332px, (max-width: 900px) calc((100vw - 94px) / 2.08 - 22px), (max-width: 1100px) calc((100vw - 136px) / 2.08 - 22px), (max-width: 1159px) calc((100vw - 170px) / 2.08 - 22px), 408px">
+          <img src="media/family-portrait.jpg" alt="An illustrated portrait of Carl and Rosemy with their corgi in the warm Philippine sunshine" width="1115" height="1411" fetchpriority="high" decoding="async">
+        </picture>
         <figcaption>Manila, Philippines <span aria-hidden="true">·</span> 2026</figcaption>
       </figure>
       <div class="letter" id="our-message">
@@ -193,14 +221,20 @@
       </div>
       <div class="contact-list">
         <section class="contact-person" aria-labelledby="first-contact">
-          <h3 id="first-contact">Carl Earvin Yu</h3>
+          <div class="contact-identity">
+            <h3 id="first-contact">Carl Earvin Yu</h3>
+            <a class="save-contact" href="contacts/carl-earvin-yu.vcf" download="Carl-Earvin-Yu.vcf" aria-label="Save Carl Earvin Yu to your contacts"><svg class="icon" aria-hidden="true"><use href="#icon-save"/></svg> Save contact</a>
+          </div>
           <div class="contact-actions">
             <a class="contact-action" href="https://wa.me/639217781866" target="_blank" rel="noopener noreferrer" aria-label="Message Carl Earvin Yu on WhatsApp (opens in a new tab)"><svg class="icon" aria-hidden="true"><use href="#icon-whatsapp"/></svg> WhatsApp</a>
             <a class="contact-action secondary" href="mailto:carl.earvin.yu@gmail.com" aria-label="Send email to Carl Earvin Yu"><svg class="icon" aria-hidden="true"><use href="#icon-mail"/></svg> Send email</a>
           </div>
         </section>
         <section class="contact-person" aria-labelledby="second-contact">
-          <h3 id="second-contact">Rosemy Yu</h3>
+          <div class="contact-identity">
+            <h3 id="second-contact">Rosemy Yu</h3>
+            <a class="save-contact" href="contacts/rosemy-yu.vcf" download="Rosemy-Yu.vcf" aria-label="Save Rosemy Yu to your contacts"><svg class="icon" aria-hidden="true"><use href="#icon-save"/></svg> Save contact</a>
+          </div>
           <div class="contact-actions">
             <a class="contact-action" href="https://wa.me/639193517941" target="_blank" rel="noopener noreferrer" aria-label="Message Rosemy Yu on WhatsApp (opens in a new tab)"><svg class="icon" aria-hidden="true"><use href="#icon-whatsapp"/></svg> WhatsApp</a>
             <a class="contact-action secondary" href="mailto:rosemybyu@gmail.com" aria-label="Send email to Rosemy Yu"><svg class="icon" aria-hidden="true"><use href="#icon-mail"/></svg> Send email</a>
